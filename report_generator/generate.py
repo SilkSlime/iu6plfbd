@@ -7,7 +7,6 @@ import os
 ROOT_DIR = Path(__file__).parent
 TEMPLATES = ROOT_DIR / 'templates'
 TEMP = ROOT_DIR / 'temp'
-OUT = ROOT_DIR / 'out'
 
 
 def get_docstring(java_code):
@@ -56,6 +55,8 @@ conclusion_data["conclusion"] = input("Enter conclusion:\n")
 
 
 to_merge = []
+
+os.mkdir(TEMP)
 
 renderdoc(to_merge, TEMPLATES / 'title.docx', titul_data)
 for task_data in task_data_list:
