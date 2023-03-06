@@ -56,7 +56,7 @@ conclusion_data["conclusion"] = input("Enter conclusion:\n")
 
 to_merge = []
 
-os.mkdir(TEMP)
+TEMP.mkdir(exist_ok=True)
 
 renderdoc(to_merge, TEMPLATES / 'title.docx', titul_data)
 for task_data in task_data_list:
