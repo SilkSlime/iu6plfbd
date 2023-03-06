@@ -1,3 +1,4 @@
 *.class
 *.docx
 !report_generator/**
+report_generator/temp/**
