@@ -2,3 +2,4 @@
 *.docx
 !report_generator/**
 report_generator/temp/**
+*.inf
