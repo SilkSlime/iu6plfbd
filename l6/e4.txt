@@ -1,0 +1,4 @@
+y = 1.0x + 1.0 passes through 5 points.
+x = 1.0 passes through 3 points.
+y = -1.0x + 5.0 passes through 3 points.
+y = -0.0x + 4.0 passes through 3 points.
