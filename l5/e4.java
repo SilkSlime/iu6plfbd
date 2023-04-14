@@ -19,7 +19,14 @@ public class e4 {
 
     public static void main(String[] args) {
         // Create array of houses with random data
-        House[] houses = House.createHouses(20);
+        House[] houses = null;
+
+        try {
+            houses = House.createHouses(0);
+        } catch (IllegalArgumentException e) {
+            System.out.println("Error: " + e.getMessage());
+            return;
+        }
 
         // Print all houses with 3 rooms
         System.out.println("All houses with 3 rooms:");
@@ -72,6 +79,10 @@ class House {
 
     // Create array of houses with random data
     public static House[] createHouses(int count) {
+        // Выкидывает исключение, если count < 0
+        if (count <= 0) {
+            throw new IllegalArgumentException("Count must be more than 0");
+        }
         House[] houses = new House[count];
         for (int i = 0; i < count; i++) {
             houses[i] = new House(i, (int) (Math.random() * 100), Math.random() * 100, (int) (Math.random() * 100), (int) (Math.random() * 10), "Street " + (int) (Math.random() * 100), "Type " + (int) (Math.random() * 10), (int) (Math.random() * 100));

@@ -48,6 +48,11 @@ class Matrix {
     private int[][] matrix;
     
     public Matrix(int m, int n) {
+        // Выбрасываем исклчение, если размерность матрицы меньше 1
+        if (m < 1 || n < 1) {
+            throw new IllegalArgumentException("Matrix size must be greater than 1");
+        }
+
         this.m = m;
         this.n = n;
         matrix = new int[m][n];
@@ -71,6 +76,10 @@ class Matrix {
     
     // Method for changing rows with max and min elements of k-th column
     public void changeRowsMinMaxOfK(int k) {
+        // Выбрасываем исклчение, если k больше размерности матрицы или меньше 0
+        if (k > this.n || k < 0) {
+            throw new IllegalArgumentException("k must be less than matrix size and greater than 0");
+        }
         int max = matrix[0][k];
         int min = matrix[0][k];
         int maxRow = 0;
@@ -94,6 +103,10 @@ class Matrix {
     
     // Method for changing i-th matrix by squaring it
     public void square(int i, Matrix[] matrixes) {
+        // Выбрасываем исклчение, если i больше размерности массива или меньше 0
+        if (i > matrixes.length || i < 0) {
+            throw new IllegalArgumentException("i must be less than matrixes array size and greater than 0");
+        }
         int[][] temp = matrixes[i].matrix;
         for (int j = 0; j < m; j++) {
             for (int k = 0; k < n; k++) {

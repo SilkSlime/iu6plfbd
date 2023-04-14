@@ -38,18 +38,58 @@ class ChainFraction {
     private int[] a;
     
     public ChainFraction(int n, int x, int[] a) {
+        // Выбрасываем исключение, если длина массива не равна n
+        if (a.length != n) {
+            throw new IllegalArgumentException("Length of array must be equal to n");
+        }
+        // Выбрасываем исключение, если x равен 0
+        if (x == 0) {
+            throw new IllegalArgumentException("x must not be equal to 0");
+        }
+        // Выбрасываем исключение, если n равен 0
+        if (n == 0) {
+            throw new IllegalArgumentException("n must not be equal to 0");
+        }
+        // Выбрасываем исключение, если n меньше 0
+        if (n < 0) {
+            throw new IllegalArgumentException("n must not be less than 0");
+        }
         this.n = n;
         this.x = x;
         this.a = a;
     }
 
     public ChainFraction(double value, int n, int x) {
+        // Выбрасываем исключение, если x равен 0
+        if (x == 0) {
+            throw new IllegalArgumentException("x must not be equal to 0");
+        }
+        // Выбрасываем исключение, если n равен 0
+        if (n == 0) {
+            throw new IllegalArgumentException("n must not be equal to 0");
+        }
+        // Выбрасываем исключение, если n меньше 0
+        if (n < 0) {
+            throw new IllegalArgumentException("n must not be less than 0");
+        }
         this.n = n;
         this.x = x;
         this.a = calculateA(value, n, x);
     }
 
     private int[] calculateA(double value, int n, int x) {
+        // Выбрасываем исключение, если x равен 0
+        if (x == 0) {
+            throw new IllegalArgumentException("x must not be equal to 0");
+        }
+        // Выбрасываем исключение, если n равен 0
+        if (n == 0) {
+            throw new IllegalArgumentException("n must not be equal to 0");
+        }
+        // Выбрасываем исключение, если n меньше 0
+        if (n < 0) {
+            throw new IllegalArgumentException("n must not be less than 0");
+        }
         this.a = new int[n];
         a[0] = (int) value;
         for (int i = 1; i < n; i++) {
