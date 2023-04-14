@@ -3,6 +3,7 @@ package l6;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Arrays;
 
 public class e1 {
     
@@ -11,14 +12,21 @@ public class e1 {
      * Умножить два многочлена заданной степени, если коэффициенты многочленов хранятся в различных списках.
      */
     public static void main(String[] args) {
-        // Создаем два списка со случайными числами - коэффициентами многочленов
-        List<Integer> list1 = new ArrayList<>();
-        List<Integer> list2 = new ArrayList<>();
-        Random random = new Random();
-        for (int i = 0; i < 5; i++) {
-            list1.add(random.nextInt(10));
-            list2.add(random.nextInt(10));
-        }
+        // // Создаем два списка со случайными числами - коэффициентами многочленов
+        // List<Integer> list1 = new ArrayList<>();
+        // List<Integer> list2 = new ArrayList<>();
+        // Random random = new Random();
+        // for (int i = 0; i < 5; i++) {
+        //     list1.add(random.nextInt(10));
+        //     list2.add(random.nextInt(10));
+        // }
+
+        // Список со значениями 2x^4 + 7x^3 + 2x^2 + 2x + 1
+        List<Integer> list1 = new ArrayList<>(Arrays.asList(2, 7, 2, 2, 1));
+        // Список со значениями 2x^4 + 2x^3 + 6x^2 + 6x + 7
+        List<Integer> list2 = new ArrayList<>(Arrays.asList(2, 2, 6, 6, 7));
+
+        
 
         // Выводим многочлены
         System.out.println("Многочлен 1: " + list1);
