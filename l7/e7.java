@@ -1,6 +1,8 @@
 package l7;
 
-
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class e7 {
 
@@ -9,7 +11,11 @@ public class e7 {
      * Заменить все одинаковые рядом стоящие символы в тексте одним символом.
      */
     public static void main(String[] args) {
-
+        String text = readFile("l7/sometext.txt");
+        
+        // Заменить все одинаковые рядом стоящие символы в тексте одним символом.
+        String result = text.replaceAll("(.)\\1+", "$1");
+        System.out.println(result);
 
     }
 
