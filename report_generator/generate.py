@@ -68,6 +68,4 @@ master = docx.Document(to_merge[0])
 composer = Composer(master)
 for file_name in to_merge[1:]:
     composer.append(docx.Document(file_name))
-    os.remove(file_name)
 master.save(LAB_PATH / f'Панфилкин Отчет {titul_data["lab_no"]}.docx')
-os.remove(to_merge[0])
